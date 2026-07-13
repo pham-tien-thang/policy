@@ -234,6 +234,20 @@ class MixMatchTermsTest(unittest.TestCase):
         self.assertEqual(1, len(privacy_links))
         self.assertEqual(url, self.parser.normalize(privacy_links[0]["text"]))
 
+    def test_missing_postal_address_placeholders_are_omitted(self):
+        self.assertNotIn("__________", self.parser.text)
+        self.assertNotIn("or by mail to", self.parser.text)
+        self.assertNotIn("a company registered in Vietnam.", self.parser.text)
+        self.assertIn(
+            "Mix & Match is operated by Phạm Tiến Thắng, an individual developer "
+            "based in Hanoi, Vietnam (“we,” “us,” or “our”).",
+            self.parser.text,
+        )
+        self.assertIn(
+            "You can contact us by email at meocungptt@gmail.com.",
+            self.parser.text,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
