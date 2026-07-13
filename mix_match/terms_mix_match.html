@@ -29,6 +29,23 @@
             line-height: 1.5;
         }
 
+        [hidden] {
+            display: none !important;
+        }
+
+        #translateButton {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 999;
+        }
+
         main {
             width: 100%;
             max-width: 1220px;
@@ -156,11 +173,14 @@
             ul {
                 padding-left: 28px;
             }
+
         }
     </style>
 </head>
 <body>
-<main>
+<button id="translateButton" type="button" aria-pressed="false" aria-controls="content-en content-vi">Dịch sang tiếng Việt</button>
+
+<main id="content-en" lang="en">
     <header>
         <h1>MIX &amp; MATCH TERMS AND CONDITIONS</h1>
         <p class="last-updated">Last updated July 13, 2026</p>
@@ -557,5 +577,368 @@
         </address>
     </section>
 </main>
+
+<main id="content-vi" lang="vi" hidden>
+    <header>
+        <h1>ĐIỀU KHOẢN VÀ ĐIỀU KIỆN CỦA MIX &amp; MATCH</h1>
+        <p class="last-updated">Cập nhật lần cuối ngày 13 tháng 7 năm 2026</p>
+    </header>
+
+    <section class="agreement" aria-labelledby="vi-agreement-to-our-legal-terms">
+        <h2 id="vi-agreement-to-our-legal-terms">THỎA THUẬN VỚI CÁC ĐIỀU KHOẢN PHÁP LÝ CỦA CHÚNG TÔI</h2>
+
+        <p>Mix &amp; Match được vận hành bởi Phạm Tiến Thắng, một nhà phát triển cá nhân tại Hà Nội, Việt Nam (“chúng tôi”).</p>
+
+        <p>Chúng tôi vận hành ứng dụng di động Mix &amp; Match (<strong>“Ứng dụng”</strong>), cũng như mọi sản phẩm và dịch vụ liên quan khác có tham chiếu hoặc liên kết đến các điều khoản pháp lý này (<strong>“Điều khoản Pháp lý”</strong>) (gọi chung là <strong>“Dịch vụ”</strong>).</p>
+
+        <p>Mix &amp; Match là ứng dụng thời trang trên thiết bị di động giúp người dùng sắp xếp các món đồ quần áo, tạo trang phục và tạo hình ảnh thử đồ ảo bằng AI.</p>
+
+        <p>Bạn có thể liên hệ với chúng tôi qua email tại <a href="mailto:meocungptt@gmail.com">meocungptt@gmail.com</a>.</p>
+
+        <p>Các Điều khoản Pháp lý này tạo thành một thỏa thuận có tính ràng buộc pháp lý giữa bạn, dù với tư cách cá nhân hay đại diện cho một tổ chức (<strong>“bạn”</strong>), và Phạm Tiến Thắng, liên quan đến việc bạn truy cập và sử dụng Dịch vụ. Bằng việc truy cập Dịch vụ, bạn xác nhận rằng bạn đã đọc, hiểu và đồng ý chịu sự ràng buộc của toàn bộ Điều khoản Pháp lý này. NẾU BẠN KHÔNG ĐỒNG Ý VỚI TOÀN BỘ ĐIỀU KHOẢN PHÁP LÝ NÀY, BẠN BỊ NGHIÊM CẤM SỬ DỤNG DỊCH VỤ VÀ PHẢI NGỪNG SỬ DỤNG NGAY LẬP TỨC.</p>
+
+        <p>Các điều khoản và điều kiện bổ sung hoặc tài liệu có thể được đăng trên Dịch vụ theo từng thời điểm được hợp nhất rõ ràng vào đây bằng cách tham chiếu. Chúng tôi bảo lưu quyền, theo toàn quyền quyết định của mình, thay đổi hoặc sửa đổi các Điều khoản Pháp lý này theo từng thời điểm. Chúng tôi sẽ thông báo cho bạn về mọi thay đổi bằng cách cập nhật ngày “Cập nhật lần cuối” của Điều khoản Pháp lý này, và bạn từ bỏ mọi quyền nhận thông báo riêng về từng thay đổi đó. Bạn có trách nhiệm định kỳ xem lại Điều khoản Pháp lý này để nắm được các cập nhật. Khi tiếp tục sử dụng Dịch vụ sau ngày Điều khoản Pháp lý sửa đổi được đăng, bạn sẽ chịu sự điều chỉnh của các thay đổi đó và được coi là đã biết cũng như chấp nhận các thay đổi.</p>
+
+        <p>Mọi người dùng là người chưa thành niên tại khu vực pháp lý nơi họ cư trú (thông thường là dưới 18 tuổi) phải được cha mẹ hoặc người giám hộ cho phép và trực tiếp giám sát khi sử dụng Dịch vụ. Nếu bạn là người chưa thành niên, cha mẹ hoặc người giám hộ của bạn phải đọc và đồng ý với Điều khoản Pháp lý này trước khi bạn sử dụng Dịch vụ.</p>
+
+        <p>Chúng tôi khuyến nghị bạn in một bản Điều khoản Pháp lý này để lưu hồ sơ.</p>
+    </section>
+
+    <nav class="table-of-contents" aria-labelledby="vi-table-of-contents">
+        <h2 id="vi-table-of-contents">MỤC LỤC</h2>
+        <ul>
+            <li><a href="#vi-our-services">1. DỊCH VỤ CỦA CHÚNG TÔI</a></li>
+            <li><a href="#vi-intellectual-property-rights">2. QUYỀN SỞ HỮU TRÍ TUỆ</a></li>
+            <li><a href="#vi-user-representations">3. CAM KẾT CỦA NGƯỜI DÙNG</a></li>
+            <li><a href="#vi-user-registration">4. ĐĂNG KÝ NGƯỜI DÙNG</a></li>
+            <li><a href="#vi-products">5. SẢN PHẨM</a></li>
+            <li><a href="#vi-purchases-and-payment">6. MUA HÀNG VÀ THANH TOÁN</a></li>
+            <li><a href="#vi-subscriptions">7. ĐĂNG KÝ GÓI DỊCH VỤ</a></li>
+            <li><a href="#vi-refunds-policy">8. CHÍNH SÁCH HOÀN TIỀN</a></li>
+            <li><a href="#vi-software">9. PHẦN MỀM</a></li>
+            <li><a href="#vi-prohibited-activities">10. HOẠT ĐỘNG BỊ CẤM</a></li>
+            <li><a href="#vi-user-generated-contributions">11. NỘI DUNG DO NGƯỜI DÙNG ĐÓNG GÓP</a></li>
+            <li><a href="#vi-contribution-license">12. GIẤY PHÉP SỬ DỤNG NỘI DUNG ĐÓNG GÓP</a></li>
+            <li><a href="#vi-mobile-application-license">13. GIẤY PHÉP ỨNG DỤNG DI ĐỘNG</a></li>
+            <li><a href="#vi-social-media">14. MẠNG XÃ HỘI</a></li>
+            <li><a href="#vi-third-party-websites-and-content">15. TRANG WEB VÀ NỘI DUNG CỦA BÊN THỨ BA</a></li>
+            <li><a href="#vi-advertisers">16. NHÀ QUẢNG CÁO</a></li>
+            <li><a href="#vi-services-management">17. QUẢN LÝ DỊCH VỤ</a></li>
+            <li><a href="#vi-privacy-policy">18. CHÍNH SÁCH QUYỀN RIÊNG TƯ</a></li>
+            <li><a href="#vi-term-and-termination">19. THỜI HẠN VÀ CHẤM DỨT</a></li>
+            <li><a href="#vi-modifications-and-interruptions">20. SỬA ĐỔI VÀ GIÁN ĐOẠN</a></li>
+            <li><a href="#vi-governing-law">21. LUẬT ĐIỀU CHỈNH</a></li>
+            <li><a href="#vi-dispute-resolution">22. GIẢI QUYẾT TRANH CHẤP</a></li>
+            <li><a href="#vi-corrections">23. ĐÍNH CHÍNH</a></li>
+            <li><a href="#vi-disclaimer">24. TUYÊN BỐ MIỄN TRỪ TRÁCH NHIỆM</a></li>
+            <li><a href="#vi-limitations-of-liability">25. GIỚI HẠN TRÁCH NHIỆM</a></li>
+            <li><a href="#vi-indemnification">26. BỒI THƯỜNG</a></li>
+            <li><a href="#vi-user-data">27. DỮ LIỆU NGƯỜI DÙNG</a></li>
+            <li><a href="#vi-electronic-communications-transactions-and-signatures">28. GIAO TIẾP, GIAO DỊCH VÀ CHỮ KÝ ĐIỆN TỬ</a></li>
+            <li><a href="#vi-california-users-and-residents">29. NGƯỜI DÙNG VÀ CƯ DÂN CALIFORNIA</a></li>
+            <li><a href="#vi-miscellaneous">30. ĐIỀU KHOẢN KHÁC</a></li>
+            <li><a href="#vi-contact-us">31. LIÊN HỆ VỚI CHÚNG TÔI</a></li>
+        </ul>
+    </nav>
+
+    <section class="terms-section" aria-labelledby="vi-our-services">
+        <h2 id="vi-our-services">1. DỊCH VỤ CỦA CHÚNG TÔI</h2>
+
+        <p>Thông tin được cung cấp khi sử dụng Dịch vụ không nhằm mục đích phân phối cho hoặc sử dụng bởi bất kỳ cá nhân hay tổ chức nào tại bất kỳ khu vực pháp lý hoặc quốc gia nào mà việc phân phối hoặc sử dụng đó trái với pháp luật hoặc quy định, hoặc khiến chúng tôi phải tuân theo bất kỳ yêu cầu đăng ký nào tại khu vực pháp lý hoặc quốc gia đó. Theo đó, những người chọn truy cập Dịch vụ từ các địa điểm khác tự thực hiện theo sáng kiến của mình và hoàn toàn chịu trách nhiệm tuân thủ pháp luật địa phương, nếu và trong phạm vi pháp luật địa phương được áp dụng.</p>
+
+        <p>Dịch vụ không được thiết kế để tuân thủ các quy định chuyên ngành (Đạo luật về Khả năng Chuyển đổi và Trách nhiệm Giải trình Bảo hiểm Y tế (HIPAA), Đạo luật Quản lý An ninh Thông tin Liên bang (FISMA), v.v.); do đó, nếu các tương tác của bạn chịu sự điều chỉnh của những luật này, bạn không được sử dụng Dịch vụ. Bạn không được sử dụng Dịch vụ theo cách vi phạm Đạo luật Gramm-Leach-Bliley (GLBA).</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-intellectual-property-rights">
+        <h2 id="vi-intellectual-property-rights">2. QUYỀN SỞ HỮU TRÍ TUỆ</h2>
+
+        <h3 class="lead-subheading">Tài sản trí tuệ của chúng tôi</h3>
+
+        <p>Chúng tôi là chủ sở hữu hoặc bên được cấp phép đối với mọi quyền sở hữu trí tuệ trong Dịch vụ, bao gồm toàn bộ mã nguồn, cơ sở dữ liệu, chức năng, phần mềm, thiết kế trang web, âm thanh, video, văn bản, hình ảnh và đồ họa trong Dịch vụ (gọi chung là <strong>“Nội dung”</strong>), cũng như các nhãn hiệu, nhãn hiệu dịch vụ và logo có trong đó (gọi là <strong>“Dấu hiệu”</strong>).</p>
+
+        <p>Nội dung và Dấu hiệu của chúng tôi được bảo vệ bởi luật bản quyền, luật nhãn hiệu (cùng nhiều luật khác về quyền sở hữu trí tuệ và cạnh tranh không lành mạnh) và các điều ước tại Hoa Kỳ cũng như trên toàn thế giới.</p>
+
+        <p>Nội dung và Dấu hiệu được cung cấp trong hoặc thông qua Dịch vụ trên cơ sở “NGUYÊN TRẠNG”, chỉ dành cho mục đích cá nhân, phi thương mại hoặc hoạt động nội bộ của doanh nghiệp bạn.</p>
+
+        <h3>Việc bạn sử dụng Dịch vụ của chúng tôi</h3>
+
+        <p>Với điều kiện bạn tuân thủ Điều khoản Pháp lý này, bao gồm mục “<a href="#vi-prohibited-activities">HOẠT ĐỘNG BỊ CẤM</a>” bên dưới, chúng tôi cấp cho bạn giấy phép không độc quyền, không thể chuyển nhượng và có thể thu hồi để:</p>
+
+        <ul>
+            <li>truy cập Dịch vụ; và</li>
+            <li>tải xuống hoặc in bản sao của bất kỳ phần Nội dung nào mà bạn đã truy cập hợp lệ,</li>
+        </ul>
+
+        <p>chỉ nhằm mục đích cá nhân, phi thương mại hoặc hoạt động nội bộ của doanh nghiệp bạn.</p>
+
+        <p>Trừ khi được quy định trong mục này hoặc nơi khác trong Điều khoản Pháp lý, không phần nào của Dịch vụ và không Nội dung hoặc Dấu hiệu nào được sao chép, tái tạo, tổng hợp, đăng lại, tải lên, đăng tải, hiển thị công khai, mã hóa, dịch, truyền, phân phối, bán, cấp phép hoặc khai thác theo cách khác cho bất kỳ mục đích thương mại nào nếu không có sự cho phép trước bằng văn bản của chúng tôi.</p>
+
+        <p>Nếu bạn muốn sử dụng Dịch vụ, Nội dung hoặc Dấu hiệu ngoài phạm vi được nêu trong mục này hoặc nơi khác trong Điều khoản Pháp lý, vui lòng gửi yêu cầu đến: <a href="mailto:meocungptt@gmail.com">meocungptt@gmail.com</a>. Nếu chúng tôi cho phép bạn đăng, tái tạo hoặc hiển thị công khai bất kỳ phần nào của Dịch vụ hoặc Nội dung, bạn phải xác định chúng tôi là chủ sở hữu hoặc bên cấp phép của Dịch vụ, Nội dung hoặc Dấu hiệu, đồng thời bảo đảm mọi thông báo bản quyền hoặc quyền sở hữu xuất hiện hoặc có thể nhìn thấy khi đăng, tái tạo hay hiển thị Nội dung.</p>
+
+        <p>Chúng tôi bảo lưu mọi quyền không được cấp rõ ràng cho bạn đối với Dịch vụ, Nội dung và Dấu hiệu.</p>
+
+        <p>Mọi hành vi vi phạm các Quyền Sở hữu Trí tuệ này sẽ cấu thành vi phạm nghiêm trọng Điều khoản Pháp lý, và quyền sử dụng Dịch vụ của bạn sẽ chấm dứt ngay lập tức.</p>
+
+        <h3>Nội dung gửi và đóng góp của bạn</h3>
+
+        <p>Vui lòng xem kỹ mục này và mục “<a href="#vi-prohibited-activities">HOẠT ĐỘNG BỊ CẤM</a>” trước khi sử dụng Dịch vụ để hiểu (a) các quyền bạn trao cho chúng tôi và (b) các nghĩa vụ của bạn khi đăng hoặc tải bất kỳ nội dung nào lên thông qua Dịch vụ.</p>
+
+        <p><strong>Nội dung gửi:</strong> Khi trực tiếp gửi cho chúng tôi bất kỳ câu hỏi, bình luận, đề xuất, ý tưởng, phản hồi hoặc thông tin nào khác về Dịch vụ (<strong>“Nội dung gửi”</strong>), bạn đồng ý chuyển giao cho chúng tôi mọi quyền sở hữu trí tuệ đối với Nội dung gửi đó. Bạn đồng ý rằng chúng tôi sẽ sở hữu Nội dung gửi này và được quyền sử dụng cũng như phổ biến không hạn chế cho mọi mục đích hợp pháp, thương mại hoặc mục đích khác, mà không cần ghi nhận hay trả thù lao cho bạn.</p>
+
+        <p><strong>Nội dung đóng góp:</strong> Dịch vụ có thể mời bạn trò chuyện, đóng góp hoặc tham gia blog, bảng tin, diễn đàn trực tuyến và các chức năng khác, trong đó bạn có thể tạo, gửi, đăng, hiển thị, truyền, xuất bản, phân phối hoặc phát nội dung và tài liệu cho chúng tôi hoặc thông qua Dịch vụ, bao gồm nhưng không giới hạn ở văn bản, bài viết, video, âm thanh, ảnh, nhạc, đồ họa, bình luận, đánh giá, đề xuất xếp hạng, thông tin cá nhân hoặc tài liệu khác (<strong>“Nội dung đóng góp”</strong>). Mọi Nội dung gửi được đăng công khai cũng sẽ được coi là Nội dung đóng góp.</p>
+
+        <p>Bạn hiểu rằng Nội dung đóng góp có thể được những người dùng khác của Dịch vụ và có thể cả người dùng trên các trang web của bên thứ ba xem.</p>
+
+        <p><strong>Khi đăng Nội dung đóng góp, bạn cấp cho chúng tôi giấy phép (bao gồm quyền sử dụng tên, nhãn hiệu và logo của bạn):</strong> Bằng việc đăng bất kỳ Nội dung đóng góp nào, bạn cấp cho chúng tôi quyền và giấy phép không hạn chế, không giới hạn, không thể thu hồi, vĩnh viễn, không độc quyền, có thể chuyển nhượng, miễn tiền bản quyền, đã thanh toán đầy đủ và có hiệu lực trên toàn thế giới để sử dụng, sao chép, tái tạo, phân phối, bán, bán lại, xuất bản, phát sóng, đặt lại tiêu đề, lưu trữ, trình diễn công khai, hiển thị công khai, định dạng lại, dịch, trích dẫn (toàn bộ hoặc một phần) và khai thác Nội dung đóng góp của bạn (bao gồm nhưng không giới hạn ở hình ảnh, tên và giọng nói của bạn) cho bất kỳ mục đích nào, dù là thương mại, quảng cáo hay mục đích khác; để tạo tác phẩm phái sinh hoặc đưa Nội dung đóng góp vào tác phẩm khác; và để cấp lại các giấy phép được cấp trong mục này. Việc sử dụng và phân phối của chúng tôi có thể diễn ra dưới mọi định dạng và qua mọi kênh truyền thông.</p>
+
+        <p>Giấy phép này bao gồm việc chúng tôi sử dụng tên của bạn, tên công ty và tên nhượng quyền nếu có, cùng mọi nhãn hiệu, nhãn hiệu dịch vụ, tên thương mại, logo và hình ảnh cá nhân hoặc thương mại mà bạn cung cấp.</p>
+
+        <p><strong>Bạn chịu trách nhiệm về nội dung mình đăng hoặc tải lên:</strong> Khi gửi Nội dung gửi và/hoặc đăng Nội dung đóng góp thông qua bất kỳ phần nào của Dịch vụ, hoặc làm cho Nội dung đóng góp có thể truy cập được qua Dịch vụ bằng cách liên kết tài khoản của bạn với bất kỳ tài khoản mạng xã hội nào, bạn:</p>
+
+        <ul>
+            <li>xác nhận đã đọc và đồng ý với mục “<a href="#vi-prohibited-activities">HOẠT ĐỘNG BỊ CẤM</a>”, đồng thời sẽ không đăng, gửi, xuất bản, tải lên hoặc truyền qua Dịch vụ bất kỳ Nội dung gửi hay Nội dung đóng góp nào bất hợp pháp, quấy rối, thù ghét, gây hại, phỉ báng, tục tĩu, bắt nạt, lạm dụng, phân biệt đối xử, đe dọa bất kỳ cá nhân hoặc nhóm nào, khiêu dâm, sai sự thật, không chính xác, gian dối hoặc gây hiểu lầm;</li>
+            <li>trong phạm vi pháp luật hiện hành cho phép, từ bỏ mọi quyền nhân thân đối với Nội dung gửi và/hoặc Nội dung đóng góp đó;</li>
+            <li>bảo đảm rằng Nội dung gửi và/hoặc Nội dung đóng góp là nguyên gốc của bạn hoặc bạn có các quyền và giấy phép cần thiết để gửi, đồng thời có đầy đủ thẩm quyền cấp cho chúng tôi các quyền nêu trên liên quan đến Nội dung gửi và/hoặc Nội dung đóng góp; và</li>
+            <li>bảo đảm và cam kết rằng Nội dung gửi và/hoặc Nội dung đóng góp không cấu thành thông tin bí mật.</li>
+        </ul>
+
+        <p>Bạn hoàn toàn chịu trách nhiệm về Nội dung gửi và/hoặc Nội dung đóng góp của mình, đồng thời ausdrücklich đồng ý hoàn trả cho chúng tôi mọi tổn thất mà chúng tôi có thể phải chịu do bạn vi phạm (a) mục này, (b) quyền sở hữu trí tuệ của bất kỳ bên thứ ba nào hoặc (c) pháp luật hiện hành.</p>
+
+        <p><strong>Chúng tôi có thể xóa hoặc chỉnh sửa Nội dung của bạn:</strong> Mặc dù không có nghĩa vụ giám sát bất kỳ Nội dung đóng góp nào, chúng tôi có quyền xóa hoặc chỉnh sửa Nội dung đóng góp vào bất kỳ lúc nào mà không cần thông báo nếu theo đánh giá hợp lý của chúng tôi, nội dung đó gây hại hoặc vi phạm Điều khoản Pháp lý này. Nếu xóa hoặc chỉnh sửa Nội dung đóng góp, chúng tôi cũng có thể đình chỉ hoặc vô hiệu hóa tài khoản của bạn và báo cáo bạn cho cơ quan có thẩm quyền.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-user-representations">
+        <h2 id="vi-user-representations">3. CAM KẾT CỦA NGƯỜI DÙNG</h2>
+
+        <p>Khi sử dụng Dịch vụ, bạn cam kết và bảo đảm rằng: (1) mọi thông tin đăng ký bạn gửi là đúng, chính xác, hiện hành và đầy đủ; (2) bạn sẽ duy trì tính chính xác của thông tin và nhanh chóng cập nhật thông tin đăng ký khi cần thiết; (3) bạn có năng lực pháp lý và đồng ý tuân thủ Điều khoản Pháp lý này; (4) bạn không phải là người chưa thành niên tại khu vực pháp lý nơi mình cư trú, hoặc nếu là người chưa thành niên, bạn đã được cha mẹ cho phép sử dụng Dịch vụ; (5) bạn sẽ không truy cập Dịch vụ bằng phương tiện tự động hoặc phi con người, dù thông qua bot, tập lệnh hay cách khác; (6) bạn sẽ không sử dụng Dịch vụ cho bất kỳ mục đích bất hợp pháp hoặc trái phép nào; và (7) việc bạn sử dụng Dịch vụ sẽ không vi phạm bất kỳ luật hoặc quy định hiện hành nào.</p>
+
+        <p>Nếu bạn cung cấp thông tin không đúng sự thật, không chính xác, không còn hiện hành hoặc không đầy đủ, chúng tôi có quyền đình chỉ hoặc chấm dứt tài khoản và từ chối mọi việc sử dụng Dịch vụ hiện tại hoặc trong tương lai (hoặc bất kỳ phần nào của Dịch vụ).</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-user-registration">
+        <h2 id="vi-user-registration">4. ĐĂNG KÝ NGƯỜI DÙNG</h2>
+
+        <p>Bạn có thể được yêu cầu đăng ký để sử dụng Dịch vụ. Bạn đồng ý giữ bí mật mật khẩu và chịu trách nhiệm về mọi hoạt động sử dụng tài khoản và mật khẩu của mình. Chúng tôi bảo lưu quyền xóa, thu hồi hoặc thay đổi tên người dùng bạn chọn nếu theo toàn quyền quyết định của chúng tôi, tên người dùng đó không phù hợp, tục tĩu hoặc có thể bị phản đối theo cách khác.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-products">
+        <h2 id="vi-products">5. SẢN PHẨM</h2>
+
+        <p>Mọi sản phẩm phụ thuộc vào tình trạng sẵn có. Chúng tôi bảo lưu quyền ngừng cung cấp bất kỳ sản phẩm nào vào bất kỳ lúc nào vì bất kỳ lý do nào. Giá của mọi sản phẩm có thể thay đổi.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-purchases-and-payment">
+        <h2 id="vi-purchases-and-payment">6. MUA HÀNG VÀ THANH TOÁN</h2>
+
+        <p>Chúng tôi chấp nhận các hình thức thanh toán sau:</p>
+
+        <ul class="payment-methods">
+            <li>Apple App Store</li>
+            <li>Google Play</li>
+        </ul>
+
+        <p>Bạn đồng ý cung cấp thông tin mua hàng và tài khoản hiện hành, đầy đủ và chính xác cho mọi giao dịch mua được thực hiện qua Dịch vụ. Bạn cũng đồng ý nhanh chóng cập nhật thông tin tài khoản và thanh toán, bao gồm địa chỉ email, phương thức thanh toán và ngày hết hạn của thẻ thanh toán, để chúng tôi có thể hoàn tất giao dịch và liên hệ với bạn khi cần. Thuế bán hàng sẽ được cộng vào giá mua hàng khi chúng tôi xác định là bắt buộc. Chúng tôi có thể thay đổi giá vào bất kỳ lúc nào. Mọi khoản thanh toán sẽ được thực hiện bằng đô la Mỹ.</p>
+
+        <p>Bạn đồng ý thanh toán mọi khoản phí theo mức giá có hiệu lực tại thời điểm mua hàng cùng mọi phí vận chuyển áp dụng, và cho phép chúng tôi tính các khoản tiền đó vào phương thức thanh toán bạn đã chọn khi đặt hàng. Chúng tôi bảo lưu quyền sửa mọi lỗi hoặc sai sót về giá, kể cả khi đã yêu cầu hoặc nhận thanh toán.</p>
+
+        <p>Chúng tôi bảo lưu quyền từ chối bất kỳ đơn hàng nào được đặt thông qua Dịch vụ. Theo toàn quyền quyết định của mình, chúng tôi có thể giới hạn hoặc hủy số lượng mua theo mỗi người, mỗi hộ gia đình hoặc mỗi đơn hàng. Các hạn chế này có thể áp dụng cho đơn hàng được đặt bởi hoặc dưới cùng một tài khoản khách hàng, cùng một phương thức thanh toán và/hoặc sử dụng cùng địa chỉ thanh toán hoặc giao hàng. Chúng tôi bảo lưu quyền giới hạn hoặc cấm các đơn hàng mà theo đánh giá riêng của mình có vẻ được đặt bởi đại lý, người bán lại hoặc nhà phân phối.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-subscriptions">
+        <h2 id="vi-subscriptions">7. ĐĂNG KÝ GÓI DỊCH VỤ</h2>
+
+        <h3 class="lead-subheading">Thanh toán và Gia hạn</h3>
+
+        <p>Gói đăng ký của bạn sẽ tiếp tục và tự động gia hạn trừ khi bị hủy. Bạn đồng ý để chúng tôi định kỳ tính phí vào phương thức thanh toán của bạn mà không cần sự chấp thuận trước cho từng khoản phí lặp lại, cho đến khi bạn hủy đơn hàng áp dụng. Chu kỳ thanh toán có thời hạn một tháng.</p>
+
+        <h3>Hủy đăng ký</h3>
+
+        <p>Người dùng có thể hủy gói đăng ký bất kỳ lúc nào thông qua phần quản lý đăng ký của Apple App Store hoặc Google Play Store. Việc hủy sẽ có hiệu lực vào cuối kỳ đã thanh toán hiện tại. Nếu có câu hỏi hoặc không hài lòng với Dịch vụ, vui lòng gửi email cho chúng tôi tại <a href="mailto:meocungptt@gmail.com">meocungptt@gmail.com</a>.</p>
+
+        <h3>Thay đổi phí</h3>
+
+        <p>Chúng tôi có thể thay đổi phí đăng ký theo từng thời điểm và sẽ thông báo cho bạn về mọi thay đổi giá theo pháp luật hiện hành.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-refunds-policy">
+        <h2 id="vi-refunds-policy">8. CHÍNH SÁCH HOÀN TIỀN</h2>
+
+        <p>Mọi giao dịch bán hàng đều là cuối cùng và sẽ không được hoàn tiền.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-software">
+        <h2 id="vi-software">9. PHẦN MỀM</h2>
+
+        <p>Chúng tôi có thể đưa phần mềm vào để sử dụng cùng Dịch vụ. Nếu phần mềm đó đi kèm thỏa thuận cấp phép người dùng cuối (<strong>“EULA”</strong>), các điều khoản của EULA sẽ điều chỉnh việc bạn sử dụng phần mềm. Nếu phần mềm không đi kèm EULA, chúng tôi cấp cho bạn giấy phép không độc quyền, có thể thu hồi, mang tính cá nhân và không thể chuyển nhượng để sử dụng phần mềm chỉ trong mối liên hệ với Dịch vụ và phù hợp với Điều khoản Pháp lý này. Mọi phần mềm và tài liệu liên quan được cung cấp trên cơ sở “NGUYÊN TRẠNG” mà không có bất kỳ bảo đảm nào, dù rõ ràng hay ngụ ý, bao gồm nhưng không giới hạn ở các bảo đảm ngụ ý về khả năng thương mại, sự phù hợp cho một mục đích cụ thể hoặc không xâm phạm. Bạn chấp nhận mọi rủi ro phát sinh từ việc sử dụng hoặc hiệu suất của bất kỳ phần mềm nào. Bạn không được tái tạo hoặc phân phối lại bất kỳ phần mềm nào trừ khi phù hợp với EULA hoặc Điều khoản Pháp lý này.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-prohibited-activities">
+        <h2 id="vi-prohibited-activities">10. HOẠT ĐỘNG BỊ CẤM</h2>
+
+        <p>Bạn không được truy cập hoặc sử dụng Dịch vụ cho bất kỳ mục đích nào khác ngoài mục đích mà chúng tôi cung cấp Dịch vụ. Dịch vụ không được sử dụng trong bất kỳ hoạt động thương mại nào, ngoại trừ những hoạt động được chúng tôi xác nhận hoặc phê duyệt cụ thể.</p>
+
+        <p>Với tư cách người dùng Dịch vụ, bạn đồng ý không:</p>
+
+        <ul>
+            <li>Truy xuất có hệ thống dữ liệu hoặc Nội dung khác từ Dịch vụ để trực tiếp hoặc gián tiếp tạo hay biên soạn một bộ sưu tập, tập hợp, cơ sở dữ liệu hoặc thư mục mà không có sự cho phép bằng văn bản của chúng tôi.</li>
+            <li>Lừa gạt, gian lận hoặc gây hiểu lầm cho chúng tôi và người dùng khác, đặc biệt trong bất kỳ nỗ lực nào nhằm tìm hiểu thông tin tài khoản nhạy cảm như mật khẩu người dùng.</li>
+            <li>Vượt qua, vô hiệu hóa hoặc can thiệp vào các tính năng liên quan đến bảo mật của Dịch vụ, bao gồm các tính năng ngăn chặn hoặc hạn chế việc sử dụng hay sao chép Nội dung, hoặc thực thi các giới hạn đối với việc sử dụng Dịch vụ và/hoặc Nội dung có trong đó.</li>
+            <li>Hạ thấp uy tín, làm hoen ố hoặc theo đánh giá của chúng tôi, gây tổn hại cho chúng tôi và/hoặc Dịch vụ.</li>
+            <li>Sử dụng bất kỳ thông tin nào có được từ Dịch vụ để quấy rối, lạm dụng hoặc gây hại cho người khác.</li>
+            <li>Sử dụng không đúng mục đích các dịch vụ hỗ trợ hoặc gửi báo cáo sai sự thật về hành vi lạm dụng hoặc sai phạm.</li>
+            <li>Sử dụng Dịch vụ theo cách không phù hợp với bất kỳ luật hoặc quy định hiện hành nào.</li>
+            <li>Đóng khung hoặc liên kết đến Dịch vụ khi chưa được phép.</li>
+            <li>Tải lên hoặc truyền (hoặc cố gắng tải lên hay truyền) virus, Trojan hoặc tài liệu khác, bao gồm việc sử dụng quá mức chữ in hoa và gửi thư rác (liên tục đăng văn bản lặp lại), làm cản trở việc sử dụng và hưởng Dịch vụ không gián đoạn của bất kỳ bên nào, hoặc sửa đổi, làm suy yếu, gián đoạn, thay đổi hay can thiệp vào việc sử dụng, tính năng, chức năng, hoạt động hoặc bảo trì Dịch vụ.</li>
+            <li>Thực hiện bất kỳ việc sử dụng hệ thống tự động nào, chẳng hạn dùng tập lệnh để gửi bình luận hoặc tin nhắn, hoặc dùng công cụ khai phá dữ liệu, robot hay công cụ thu thập và trích xuất dữ liệu tương tự.</li>
+            <li>Xóa thông báo bản quyền hoặc quyền sở hữu khác khỏi bất kỳ Nội dung nào.</li>
+            <li>Cố gắng mạo danh người dùng hoặc cá nhân khác, hoặc sử dụng tên người dùng của người dùng khác.</li>
+            <li>Tải lên hoặc truyền (hoặc cố gắng tải lên hay truyền) bất kỳ tài liệu nào hoạt động như cơ chế thu thập hoặc truyền thông tin thụ động hay chủ động, bao gồm nhưng không giới hạn ở định dạng trao đổi đồ họa trong suốt (“gif”), điểm ảnh 1×1, web bug, cookie hoặc thiết bị tương tự khác (đôi khi được gọi là “phần mềm gián điệp”, “cơ chế thu thập thụ động” hoặc “pcm”).</li>
+            <li>Can thiệp, làm gián đoạn hoặc tạo gánh nặng quá mức cho Dịch vụ hoặc mạng hay dịch vụ kết nối với Dịch vụ.</li>
+            <li>Quấy rối, làm phiền, đe dọa hoặc uy hiếp bất kỳ nhân viên hay đại diện nào của chúng tôi đang cung cấp bất kỳ phần nào của Dịch vụ cho bạn.</li>
+            <li>Cố gắng vượt qua bất kỳ biện pháp nào của Dịch vụ được thiết kế để ngăn chặn hoặc hạn chế quyền truy cập vào Dịch vụ hoặc bất kỳ phần nào của Dịch vụ.</li>
+            <li>Sao chép hoặc điều chỉnh phần mềm của Dịch vụ, bao gồm nhưng không giới hạn ở Flash, PHP, HTML, JavaScript hoặc mã khác.</li>
+            <li>Trừ khi pháp luật hiện hành cho phép, giải mã, dịch ngược, tháo rời hoặc thiết kế ngược bất kỳ phần mềm nào cấu thành hoặc theo bất kỳ cách nào tạo nên một phần của Dịch vụ.</li>
+            <li>Trừ trường hợp là kết quả của việc sử dụng công cụ tìm kiếm hoặc trình duyệt Internet tiêu chuẩn, sử dụng, khởi chạy, phát triển hoặc phân phối bất kỳ hệ thống tự động nào, bao gồm nhưng không giới hạn ở spider, robot, tiện ích gian lận, scraper hoặc trình đọc ngoại tuyến truy cập Dịch vụ, hoặc sử dụng hay khởi chạy bất kỳ tập lệnh hoặc phần mềm trái phép nào.</li>
+            <li>Sử dụng đại lý mua hàng hoặc đại lý thu mua để thực hiện giao dịch mua trên Dịch vụ.</li>
+            <li>Sử dụng Dịch vụ khi chưa được phép, bao gồm thu thập tên người dùng và/hoặc địa chỉ email của người dùng bằng phương tiện điện tử hoặc phương tiện khác để gửi email không được yêu cầu, hoặc tạo tài khoản người dùng bằng phương tiện tự động hay dưới danh nghĩa giả mạo.</li>
+            <li>Sử dụng Dịch vụ như một phần trong nỗ lực cạnh tranh với chúng tôi, hoặc sử dụng Dịch vụ và/hoặc Nội dung cho bất kỳ hoạt động tạo doanh thu hoặc doanh nghiệp thương mại nào.</li>
+            <li>Sử dụng Dịch vụ để quảng cáo hoặc chào bán hàng hóa và dịch vụ.</li>
+            <li>Bán hoặc chuyển giao hồ sơ của bạn theo cách khác.</li>
+            <li>Tải lên hình ảnh hoặc nội dung bất hợp pháp, gây hại, lạm dụng, khiêu dâm hoặc xâm phạm. Sử dụng Dịch vụ để mạo danh người khác hoặc sử dụng sai hình ảnh của người khác khi chưa được phép. Cố gắng thiết kế ngược, gây gián đoạn, làm quá tải hoặc giành quyền truy cập trái phép vào Dịch vụ. Sử dụng công cụ tự động, bot hoặc tập lệnh để lạm dụng Dịch vụ hoặc tiêu thụ tài nguyên quá mức.</li>
+        </ul>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-user-generated-contributions">
+        <h2 id="vi-user-generated-contributions">11. NỘI DUNG DO NGƯỜI DÙNG ĐÓNG GÓP</h2>
+
+        <p>Dịch vụ có thể mời bạn trò chuyện, đóng góp hoặc tham gia blog, bảng tin, diễn đàn trực tuyến và các chức năng khác, đồng thời có thể cho phép bạn tạo, gửi, đăng, hiển thị, truyền, trình diễn, xuất bản, phân phối hoặc phát nội dung và tài liệu cho chúng tôi hoặc trên Dịch vụ, bao gồm nhưng không giới hạn ở văn bản, bài viết, video, âm thanh, ảnh, đồ họa, bình luận, đề xuất, thông tin cá nhân hoặc tài liệu khác (gọi chung là <strong>“Nội dung đóng góp”</strong>). Nội dung đóng góp có thể được những người dùng khác của Dịch vụ và người dùng trên các trang web của bên thứ ba xem. Vì vậy, mọi Nội dung đóng góp bạn truyền có thể được coi là không bí mật và không độc quyền. Khi tạo hoặc cung cấp bất kỳ Nội dung đóng góp nào, bạn cam kết và bảo đảm rằng:</p>
+
+        <ul>
+            <li>Việc tạo, phân phối, truyền, hiển thị công khai hoặc trình diễn, cũng như việc truy cập, tải xuống hoặc sao chép Nội dung đóng góp của bạn không và sẽ không xâm phạm các quyền sở hữu, bao gồm nhưng không giới hạn ở bản quyền, bằng sáng chế, nhãn hiệu, bí mật thương mại hoặc quyền nhân thân của bất kỳ bên thứ ba nào.</li>
+            <li>Bạn là người tạo và chủ sở hữu, hoặc có các giấy phép, quyền, sự đồng ý, giấy miễn trừ và sự cho phép cần thiết để sử dụng và cho phép chúng tôi, Dịch vụ và những người dùng khác của Dịch vụ sử dụng Nội dung đóng góp của bạn theo mọi cách được Dịch vụ và Điều khoản Pháp lý này dự liệu.</li>
+            <li>Bạn có sự đồng ý, giấy miễn trừ và/hoặc sự cho phép bằng văn bản của từng cá nhân có thể nhận dạng trong Nội dung đóng góp để sử dụng tên hoặc hình ảnh của từng người đó, cho phép đưa vào và sử dụng Nội dung đóng góp theo mọi cách được Dịch vụ và Điều khoản Pháp lý này dự liệu.</li>
+            <li>Nội dung đóng góp của bạn không sai sự thật, không chính xác hoặc gây hiểu lầm.</li>
+            <li>Nội dung đóng góp của bạn không phải là quảng cáo không được yêu cầu hoặc trái phép, tài liệu quảng bá, mô hình kim tự tháp, thư dây chuyền, thư rác, gửi thư hàng loạt hoặc hình thức chào mời khác.</li>
+            <li>Nội dung đóng góp của bạn không tục tĩu, dâm ô, khiêu dâm, bẩn thỉu, bạo lực, quấy rối, phỉ báng, vu khống hoặc có thể bị phản đối theo cách khác (do chúng tôi xác định).</li>
+            <li>Nội dung đóng góp của bạn không chế giễu, nhạo báng, hạ thấp, đe dọa hoặc lạm dụng bất kỳ ai.</li>
+            <li>Nội dung đóng góp của bạn không được dùng để quấy rối hoặc đe dọa (theo nghĩa pháp lý của các thuật ngữ này) bất kỳ người nào khác hoặc cổ súy bạo lực nhắm vào một cá nhân hay nhóm người cụ thể.</li>
+            <li>Nội dung đóng góp của bạn không vi phạm bất kỳ luật, quy định hoặc quy tắc hiện hành nào.</li>
+            <li>Nội dung đóng góp của bạn không vi phạm quyền riêng tư hoặc quyền công khai của bất kỳ bên thứ ba nào.</li>
+            <li>Nội dung đóng góp của bạn không vi phạm bất kỳ luật hiện hành nào liên quan đến nội dung khiêu dâm trẻ em hoặc luật khác nhằm bảo vệ sức khỏe hay phúc lợi của người chưa thành niên.</li>
+            <li>Nội dung đóng góp của bạn không chứa bất kỳ bình luận xúc phạm nào liên quan đến chủng tộc, nguồn gốc quốc gia, giới tính, xu hướng tính dục hoặc khuyết tật thể chất.</li>
+            <li>Nội dung đóng góp của bạn không vi phạm theo cách khác, hoặc liên kết đến tài liệu vi phạm, bất kỳ quy định nào của Điều khoản Pháp lý này hay bất kỳ luật hoặc quy định hiện hành nào.</li>
+        </ul>
+
+        <p>Mọi việc sử dụng Dịch vụ vi phạm các quy định nêu trên đều vi phạm Điều khoản Pháp lý này và có thể dẫn đến, trong số các hậu quả khác, việc chấm dứt hoặc đình chỉ quyền sử dụng Dịch vụ của bạn.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-contribution-license">
+        <h2 id="vi-contribution-license">12. GIẤY PHÉP SỬ DỤNG NỘI DUNG ĐÓNG GÓP</h2>
+
+        <p>Khi đăng Nội dung đóng góp lên bất kỳ phần nào của Dịch vụ hoặc làm cho Nội dung đóng góp có thể truy cập được trên Dịch vụ bằng cách liên kết tài khoản của bạn trên Dịch vụ với bất kỳ tài khoản mạng xã hội nào, bạn tự động cấp, đồng thời cam kết và bảo đảm rằng mình có quyền cấp cho chúng tôi, quyền và giấy phép không hạn chế, không giới hạn, không thể thu hồi, vĩnh viễn, không độc quyền, có thể chuyển nhượng, miễn tiền bản quyền, đã thanh toán đầy đủ và có hiệu lực trên toàn thế giới để lưu trữ, sử dụng, sao chép, tái tạo, tiết lộ, bán, bán lại, xuất bản, phát sóng, đặt lại tiêu đề, lưu trữ dài hạn, lưu trong bộ nhớ đệm, trình diễn công khai, hiển thị công khai, định dạng lại, dịch, truyền, trích dẫn (toàn bộ hoặc một phần) và phân phối Nội dung đóng góp đó (bao gồm nhưng không giới hạn ở hình ảnh và giọng nói của bạn) cho bất kỳ mục đích nào, dù là thương mại, quảng cáo hay mục đích khác; để tạo tác phẩm phái sinh hoặc đưa Nội dung đóng góp vào tác phẩm khác; và để cấp cũng như cho phép cấp lại các giấy phép nêu trên. Việc sử dụng và phân phối có thể diễn ra dưới mọi định dạng và qua mọi kênh truyền thông.</p>
+
+        <p>Giấy phép này áp dụng cho mọi hình thức, phương tiện hoặc công nghệ hiện đã biết hoặc được phát triển sau này, và bao gồm việc chúng tôi sử dụng tên của bạn, tên công ty và tên nhượng quyền nếu có, cùng mọi nhãn hiệu, nhãn hiệu dịch vụ, tên thương mại, logo và hình ảnh cá nhân hoặc thương mại mà bạn cung cấp. Bạn từ bỏ mọi quyền nhân thân đối với Nội dung đóng góp và bảo đảm rằng các quyền nhân thân đó chưa được khẳng định theo cách khác trong Nội dung đóng góp.</p>
+
+        <p>Chúng tôi không khẳng định bất kỳ quyền sở hữu nào đối với Nội dung đóng góp của bạn. Bạn giữ toàn bộ quyền sở hữu đối với mọi Nội dung đóng góp và mọi quyền sở hữu trí tuệ hoặc quyền sở hữu khác gắn với Nội dung đóng góp. Chúng tôi không chịu trách nhiệm về bất kỳ tuyên bố hoặc cam kết nào trong Nội dung đóng góp do bạn cung cấp tại bất kỳ khu vực nào trên Dịch vụ. Bạn hoàn toàn chịu trách nhiệm về Nội dung đóng góp của mình trên Dịch vụ, đồng thời rõ ràng đồng ý miễn trừ cho chúng tôi khỏi mọi trách nhiệm và không thực hiện bất kỳ hành động pháp lý nào chống lại chúng tôi liên quan đến Nội dung đóng góp.</p>
+
+        <p>Theo toàn quyền quyết định tuyệt đối của mình, chúng tôi có quyền (1) chỉnh sửa, biên tập hoặc thay đổi Nội dung đóng góp theo cách khác; (2) phân loại lại Nội dung đóng góp để đặt tại vị trí phù hợp hơn trên Dịch vụ; và (3) sàng lọc trước hoặc xóa Nội dung đóng góp vào bất kỳ lúc nào, vì bất kỳ lý do nào mà không cần thông báo. Chúng tôi không có nghĩa vụ giám sát Nội dung đóng góp của bạn.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-mobile-application-license">
+        <h2 id="vi-mobile-application-license">13. GIẤY PHÉP ỨNG DỤNG DI ĐỘNG</h2>
+
+        <h3 class="lead-subheading">Giấy phép sử dụng</h3>
+
+        <p>Nếu bạn truy cập Dịch vụ qua Ứng dụng, chúng tôi cấp cho bạn quyền có giới hạn, có thể thu hồi, không độc quyền và không thể chuyển nhượng để cài đặt và sử dụng Ứng dụng trên các thiết bị điện tử không dây do bạn sở hữu hoặc kiểm soát, đồng thời truy cập và sử dụng Ứng dụng trên các thiết bị đó theo đúng các điều khoản và điều kiện của giấy phép ứng dụng di động trong Điều khoản Pháp lý này. Bạn không được: (1) trừ khi pháp luật hiện hành cho phép, dịch ngược, thiết kế ngược, tháo rời, cố gắng suy ra mã nguồn hoặc giải mã Ứng dụng; (2) thực hiện bất kỳ sửa đổi, điều chỉnh, cải tiến, nâng cấp, bản dịch hoặc tác phẩm phái sinh nào từ Ứng dụng; (3) vi phạm bất kỳ luật, quy tắc hoặc quy định hiện hành nào liên quan đến việc truy cập hoặc sử dụng Ứng dụng; (4) xóa, thay đổi hoặc che khuất bất kỳ thông báo quyền sở hữu nào (bao gồm thông báo bản quyền hoặc nhãn hiệu) do chúng tôi hoặc bên cấp phép Ứng dụng đăng; (5) sử dụng Ứng dụng cho bất kỳ hoạt động tạo doanh thu, doanh nghiệp thương mại hoặc mục đích nào khác mà Ứng dụng không được thiết kế hoặc dự định phục vụ; (6) cung cấp Ứng dụng qua mạng hoặc môi trường khác cho phép nhiều thiết bị hoặc người dùng truy cập hay sử dụng cùng lúc; (7) sử dụng Ứng dụng để tạo sản phẩm, dịch vụ hoặc phần mềm trực tiếp hay gián tiếp cạnh tranh hoặc thay thế Ứng dụng theo bất kỳ cách nào; (8) sử dụng Ứng dụng để gửi truy vấn tự động đến bất kỳ trang web nào hoặc gửi email thương mại không được yêu cầu; hoặc (9) sử dụng bất kỳ thông tin độc quyền, giao diện hoặc tài sản trí tuệ nào khác của chúng tôi trong việc thiết kế, phát triển, sản xuất, cấp phép hoặc phân phối ứng dụng, phụ kiện hay thiết bị dùng với Ứng dụng.</p>
+
+        <h3>Thiết bị Apple và Android</h3>
+
+        <p>Các điều khoản sau áp dụng khi bạn sử dụng Ứng dụng được tải từ Apple Store hoặc Google Play (mỗi bên gọi là <strong>“Nhà phân phối Ứng dụng”</strong>) để truy cập Dịch vụ: (1) giấy phép được cấp cho bạn đối với Ứng dụng chỉ giới hạn ở giấy phép không thể chuyển nhượng để sử dụng ứng dụng trên thiết bị chạy hệ điều hành Apple iOS hoặc Android, tùy trường hợp, và phù hợp với các quy tắc sử dụng trong điều khoản dịch vụ của Nhà phân phối Ứng dụng áp dụng; (2) chúng tôi chịu trách nhiệm cung cấp dịch vụ bảo trì và hỗ trợ cho Ứng dụng như quy định trong giấy phép ứng dụng di động thuộc Điều khoản Pháp lý này hoặc theo yêu cầu khác của pháp luật hiện hành, và bạn thừa nhận rằng mỗi Nhà phân phối Ứng dụng không có bất kỳ nghĩa vụ nào cung cấp dịch vụ bảo trì và hỗ trợ cho Ứng dụng; (3) nếu Ứng dụng không đáp ứng bất kỳ bảo đảm áp dụng nào, bạn có thể thông báo cho Nhà phân phối Ứng dụng áp dụng, và theo các điều khoản và chính sách của mình, Nhà phân phối Ứng dụng có thể hoàn lại giá mua Ứng dụng nếu có; trong phạm vi tối đa pháp luật cho phép, Nhà phân phối Ứng dụng không có nghĩa vụ bảo đảm nào khác đối với Ứng dụng; (4) bạn cam kết và bảo đảm rằng (i) bạn không ở quốc gia chịu lệnh cấm vận của Chính phủ Hoa Kỳ hoặc được Chính phủ Hoa Kỳ chỉ định là quốc gia “hỗ trợ khủng bố”, và (ii) bạn không có tên trong bất kỳ danh sách các bên bị cấm hoặc hạn chế nào của Chính phủ Hoa Kỳ; (5) bạn phải tuân thủ các điều khoản thỏa thuận áp dụng của bên thứ ba khi sử dụng Ứng dụng; ví dụ, nếu có ứng dụng VoIP, bạn không được vi phạm thỏa thuận dịch vụ dữ liệu không dây khi sử dụng Ứng dụng; và (6) bạn thừa nhận và đồng ý rằng các Nhà phân phối Ứng dụng là bên thụ hưởng thứ ba của các điều khoản và điều kiện trong giấy phép ứng dụng di động này, và mỗi Nhà phân phối Ứng dụng có quyền (và được coi là đã chấp nhận quyền) thực thi các điều khoản và điều kiện đó đối với bạn với tư cách bên thụ hưởng thứ ba.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-social-media">
+        <h2 id="vi-social-media">14. MẠNG XÃ HỘI</h2>
+
+        <p>Là một phần chức năng của Dịch vụ, bạn có thể liên kết tài khoản của mình với các tài khoản trực tuyến tại nhà cung cấp dịch vụ bên thứ ba (mỗi tài khoản gọi là <strong>“Tài khoản Bên thứ ba”</strong>) bằng cách: (1) cung cấp thông tin đăng nhập Tài khoản Bên thứ ba thông qua Dịch vụ; hoặc (2) cho phép chúng tôi truy cập Tài khoản Bên thứ ba trong phạm vi được phép theo các điều khoản và điều kiện điều chỉnh việc bạn sử dụng từng Tài khoản Bên thứ ba. Bạn cam kết và bảo đảm rằng mình có quyền tiết lộ thông tin đăng nhập Tài khoản Bên thứ ba và/hoặc cấp cho chúng tôi quyền truy cập mà không vi phạm bất kỳ điều khoản và điều kiện nào điều chỉnh việc sử dụng Tài khoản Bên thứ ba áp dụng, không buộc chúng tôi trả bất kỳ khoản phí nào và không khiến chúng tôi chịu các giới hạn sử dụng do nhà cung cấp dịch vụ bên thứ ba áp đặt. Khi cấp cho chúng tôi quyền truy cập bất kỳ Tài khoản Bên thứ ba nào, bạn hiểu rằng (1) chúng tôi có thể truy cập, cung cấp và lưu trữ (nếu áp dụng) nội dung bạn đã cung cấp và lưu trong Tài khoản Bên thứ ba (<strong>“Nội dung Mạng xã hội”</strong>) để nội dung đó có thể được truy cập trên và thông qua Dịch vụ bằng tài khoản của bạn, bao gồm nhưng không giới hạn ở danh sách bạn bè; và (2) chúng tôi có thể gửi đến và nhận từ Tài khoản Bên thứ ba thông tin bổ sung trong phạm vi bạn được thông báo khi liên kết tài khoản. Tùy vào Tài khoản Bên thứ ba bạn chọn và các cài đặt quyền riêng tư của tài khoản đó, thông tin nhận dạng cá nhân bạn đăng có thể xuất hiện trên và thông qua tài khoản của bạn trên Dịch vụ. Xin lưu ý rằng nếu Tài khoản Bên thứ ba hoặc dịch vụ liên quan không còn khả dụng, hoặc quyền truy cập của chúng tôi bị nhà cung cấp bên thứ ba chấm dứt, Nội dung Mạng xã hội có thể không còn khả dụng trên và thông qua Dịch vụ. Bạn có thể vô hiệu hóa kết nối giữa tài khoản của mình trên Dịch vụ và Tài khoản Bên thứ ba vào bất kỳ lúc nào. XIN LƯU Ý RẰNG MỐI QUAN HỆ CỦA BẠN VỚI NHÀ CUNG CẤP DỊCH VỤ BÊN THỨ BA LIÊN QUAN ĐẾN TÀI KHOẢN BÊN THỨ BA CHỈ ĐƯỢC ĐIỀU CHỈNH BỞI THỎA THUẬN GIỮA BẠN VÀ NHÀ CUNG CẤP ĐÓ. Chúng tôi không thực hiện việc xem xét Nội dung Mạng xã hội cho bất kỳ mục đích nào, bao gồm nhưng không giới hạn ở tính chính xác, hợp pháp hoặc không xâm phạm, và không chịu trách nhiệm về Nội dung Mạng xã hội. Bạn thừa nhận và đồng ý rằng chúng tôi có thể truy cập sổ địa chỉ email gắn với Tài khoản Bên thứ ba và danh sách liên hệ lưu trên thiết bị di động hoặc máy tính bảng của bạn chỉ nhằm xác định và thông báo cho bạn về những liên hệ cũng đã đăng ký sử dụng Dịch vụ. Bạn có thể vô hiệu hóa kết nối bằng cách liên hệ với chúng tôi theo thông tin bên dưới hoặc qua cài đặt tài khoản (nếu áp dụng). Chúng tôi sẽ cố gắng xóa mọi thông tin lưu trên máy chủ có được qua Tài khoản Bên thứ ba, ngoại trừ tên người dùng và ảnh hồ sơ được gắn với tài khoản của bạn.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-third-party-websites-and-content">
+        <h2 id="vi-third-party-websites-and-content">15. TRANG WEB VÀ NỘI DUNG CỦA BÊN THỨ BA</h2>
+
+        <p>Dịch vụ có thể chứa (hoặc bạn có thể được gửi qua Ứng dụng) liên kết đến các trang web khác (<strong>“Trang web Bên thứ ba”</strong>), cũng như bài viết, ảnh, văn bản, đồ họa, hình ảnh, thiết kế, nhạc, âm thanh, video, thông tin, ứng dụng, phần mềm và nội dung hoặc hạng mục khác thuộc về hay có nguồn gốc từ bên thứ ba (<strong>“Nội dung Bên thứ ba”</strong>). Chúng tôi không điều tra, giám sát hoặc kiểm tra tính chính xác, phù hợp hay đầy đủ của các Trang web Bên thứ ba và Nội dung Bên thứ ba đó, đồng thời không chịu trách nhiệm về bất kỳ Trang web Bên thứ ba nào được truy cập qua Dịch vụ hoặc bất kỳ Nội dung Bên thứ ba nào được đăng trên, cung cấp qua hoặc cài đặt từ Dịch vụ, bao gồm nội dung, tính chính xác, tính xúc phạm, ý kiến, độ tin cậy, thực hành quyền riêng tư hoặc chính sách khác của hay có trong Trang web Bên thứ ba hoặc Nội dung Bên thứ ba. Việc đưa vào, liên kết đến hoặc cho phép sử dụng hay cài đặt bất kỳ Trang web Bên thứ ba hoặc Nội dung Bên thứ ba nào không đồng nghĩa với sự chấp thuận hoặc xác nhận của chúng tôi. Nếu bạn rời Dịch vụ và truy cập Trang web Bên thứ ba hoặc sử dụng hay cài đặt Nội dung Bên thứ ba, bạn tự chịu rủi ro và cần biết rằng Điều khoản Pháp lý này không còn điều chỉnh. Bạn nên xem các điều khoản và chính sách áp dụng, bao gồm thực hành quyền riêng tư và thu thập dữ liệu, của bất kỳ trang web nào bạn truy cập từ Dịch vụ hoặc liên quan đến ứng dụng bạn sử dụng hay cài đặt từ Dịch vụ. Mọi giao dịch mua qua Trang web Bên thứ ba sẽ được thực hiện trên trang web khác và với công ty khác; chúng tôi không chịu bất kỳ trách nhiệm nào đối với giao dịch chỉ diễn ra giữa bạn và bên thứ ba áp dụng. Bạn đồng ý và thừa nhận rằng chúng tôi không xác nhận các sản phẩm hoặc dịch vụ được cung cấp trên Trang web Bên thứ ba, và bạn sẽ miễn trừ cho chúng tôi khỏi mọi thiệt hại do việc mua các sản phẩm hoặc dịch vụ đó. Ngoài ra, bạn sẽ miễn trừ cho chúng tôi khỏi mọi tổn thất bạn phải chịu hoặc thiệt hại gây ra cho bạn liên quan đến hay phát sinh theo bất kỳ cách nào từ Nội dung Bên thứ ba hoặc việc liên hệ với Trang web Bên thứ ba.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-advertisers">
+        <h2 id="vi-advertisers">16. NHÀ QUẢNG CÁO</h2>
+
+        <p>Chúng tôi cho phép nhà quảng cáo hiển thị quảng cáo và thông tin khác tại một số khu vực của Dịch vụ, chẳng hạn quảng cáo ở thanh bên hoặc quảng cáo biểu ngữ. Chúng tôi chỉ cung cấp không gian để đặt quảng cáo và không có mối quan hệ nào khác với nhà quảng cáo.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-services-management">
+        <h2 id="vi-services-management">17. QUẢN LÝ DỊCH VỤ</h2>
+
+        <p>Chúng tôi bảo lưu quyền, nhưng không có nghĩa vụ: (1) giám sát Dịch vụ để phát hiện vi phạm Điều khoản Pháp lý này; (2) thực hiện hành động pháp lý phù hợp đối với bất kỳ ai mà theo toàn quyền quyết định của chúng tôi vi phạm pháp luật hoặc Điều khoản Pháp lý này, bao gồm nhưng không giới hạn ở việc báo cáo người dùng đó cho cơ quan thực thi pháp luật; (3) theo toàn quyền quyết định và không bị giới hạn, từ chối, hạn chế quyền truy cập, giới hạn tính khả dụng hoặc vô hiệu hóa (trong phạm vi công nghệ cho phép) bất kỳ Nội dung đóng góp nào của bạn hoặc bất kỳ phần nào của nội dung đó; (4) theo toàn quyền quyết định và không bị giới hạn, không cần thông báo hoặc chịu trách nhiệm, xóa khỏi Dịch vụ hoặc vô hiệu hóa mọi tệp và nội dung có kích thước quá lớn hoặc theo bất kỳ cách nào gây gánh nặng cho hệ thống; và (5) quản lý Dịch vụ theo cách được thiết kế để bảo vệ quyền và tài sản của chúng tôi cũng như tạo điều kiện cho Dịch vụ hoạt động đúng cách.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-privacy-policy">
+        <h2 id="vi-privacy-policy">18. CHÍNH SÁCH QUYỀN RIÊNG TƯ</h2>
+
+        <p>Chúng tôi quan tâm đến quyền riêng tư và bảo mật dữ liệu. Vui lòng xem Chính sách Quyền riêng tư của chúng tôi: <a href="https://pham-tien-thang.github.io/policy/mix_match/policy_mix_match.html">https://pham-tien-thang.github.io/policy/mix_match/policy_mix_match.html</a>. Khi sử dụng Dịch vụ, bạn đồng ý chịu sự ràng buộc của Chính sách Quyền riêng tư, được hợp nhất vào Điều khoản Pháp lý này. Xin lưu ý Dịch vụ được lưu trữ tại Việt Nam. Nếu bạn truy cập Dịch vụ từ khu vực khác trên thế giới có luật hoặc yêu cầu về thu thập, sử dụng hoặc tiết lộ dữ liệu cá nhân khác với pháp luật áp dụng tại Việt Nam, thì bằng việc tiếp tục sử dụng Dịch vụ, bạn đang chuyển dữ liệu của mình đến Việt Nam và rõ ràng đồng ý để dữ liệu được chuyển đến và xử lý tại Việt Nam.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-term-and-termination">
+        <h2 id="vi-term-and-termination">19. THỜI HẠN VÀ CHẤM DỨT</h2>
+
+        <p>Điều khoản Pháp lý này vẫn có đầy đủ hiệu lực trong thời gian bạn sử dụng Dịch vụ. KHÔNG HẠN CHẾ BẤT KỲ QUY ĐỊNH NÀO KHÁC CỦA ĐIỀU KHOẢN PHÁP LÝ NÀY, THEO TOÀN QUYỀN QUYẾT ĐỊNH VÀ KHÔNG CẦN THÔNG BÁO HOẶC CHỊU TRÁCH NHIỆM, CHÚNG TÔI BẢO LƯU QUYỀN TỪ CHỐI BẤT KỲ NGƯỜI NÀO TRUY CẬP VÀ SỬ DỤNG DỊCH VỤ (BAO GỒM CHẶN MỘT SỐ ĐỊA CHỈ IP) VÌ BẤT KỲ LÝ DO NÀO HOẶC KHÔNG CẦN LÝ DO, BAO GỒM NHƯNG KHÔNG GIỚI HẠN Ở VIỆC VI PHẠM BẤT KỲ CAM KẾT, BẢO ĐẢM HOẶC NGHĨA VỤ NÀO TRONG ĐIỀU KHOẢN PHÁP LÝ NÀY HAY BẤT KỲ LUẬT HOẶC QUY ĐỊNH HIỆN HÀNH NÀO. THEO TOÀN QUYỀN QUYẾT ĐỊNH CỦA MÌNH, CHÚNG TÔI CÓ THỂ CHẤM DỨT VIỆC BẠN SỬ DỤNG HOẶC THAM GIA DỊCH VỤ, HOẶC XÓA TÀI KHOẢN VÀ MỌI NỘI DUNG HAY THÔNG TIN BẠN ĐÃ ĐĂNG VÀO BẤT KỲ LÚC NÀO MÀ KHÔNG CẦN CẢNH BÁO.</p>
+
+        <p>Nếu chúng tôi chấm dứt hoặc đình chỉ tài khoản của bạn vì bất kỳ lý do nào, bạn bị cấm đăng ký và tạo tài khoản mới dưới tên của mình, tên giả hoặc tên mượn, hay tên của bất kỳ bên thứ ba nào, kể cả khi bạn hành động thay mặt bên thứ ba đó. Ngoài việc chấm dứt hoặc đình chỉ tài khoản, chúng tôi bảo lưu quyền thực hiện hành động pháp lý phù hợp, bao gồm nhưng không giới hạn ở việc yêu cầu biện pháp khắc phục dân sự, hình sự và lệnh cấm.</p>
+    </section>
+
+    <section class="terms-section" aria-labelledby="vi-modifications-and-interruptions">
+        <h2 id="vi-modifications-and-interruptions">20. SỬA ĐỔI VÀ GIÁN ĐOẠN</h2>
+
+        <p>Theo toàn quyền quyết định của mình, chúng tôi bảo lưu quyền thay đổi, sửa đổi hoặc xóa nội dung của Dịch vụ vào bất kỳ lúc nào hoặc vì bất kỳ lý do nào mà không cần thông báo. Tuy nhiên, chúng tôi không có nghĩa vụ cập nhật bất kỳ thông tin nào trên Dịch vụ. Chúng tôi sẽ không chịu trách nhiệm với bạn hoặc bất kỳ bên thứ ba nào về việc sửa đổi, thay đổi giá, đình chỉ hoặc ngừng Dịch vụ.</p>
+
+        <p>Chúng tôi không thể bảo đảm Dịch vụ luôn khả dụng. Chúng tôi có thể gặp sự cố phần cứng, phần mềm hoặc vấn đề khác, hoặc cần thực hiện bảo trì liên quan đến Dịch vụ, dẫn đến gián đoạn, chậm trễ hoặc lỗi. Chúng tôi bảo lưu quyền thay đổi, sửa đổi, cập nhật, đình chỉ, ngừng hoặc điều chỉnh Dịch vụ theo cách khác vào bất kỳ lúc nào hoặc vì bất kỳ lý do nào mà không cần thông báo cho bạn. Bạn đồng ý rằng chúng tôi không chịu bất kỳ trách nhiệm nào đối với mọi tổn thất, thiệt hại hoặc bất tiện do bạn không thể truy cập hay sử dụng Dịch vụ trong thời gian ngừng hoạt động hoặc ngừng cung cấp. Không nội dung nào trong Điều khoản Pháp lý này được hiểu là buộc chúng tôi duy trì và hỗ trợ Dịch vụ hoặc cung cấp bất kỳ bản sửa lỗi, bản cập nhật hay bản phát hành nào liên quan.</p>
+    </section>
+
+    <!-- VIETNAMESE_SECTIONS -->
+</main>
+
+<script>
+    const languageToggle = document.getElementById("translateButton");
+    const enContent = document.getElementById("content-en");
+    const viContent = document.getElementById("content-vi");
+    const pageTitles = {
+        en: "Mix & Match Terms and Conditions",
+        vi: "Điều khoản và điều kiện của Mix & Match"
+    };
+
+    languageToggle.addEventListener("click", () => {
+        const showVietnamese = viContent.hidden;
+
+        enContent.hidden = showVietnamese;
+        viContent.hidden = !showVietnamese;
+        document.documentElement.lang = showVietnamese ? "vi" : "en";
+        document.title = showVietnamese ? pageTitles.vi : pageTitles.en;
+        languageToggle.textContent = showVietnamese ? "Translate to English" : "Dịch sang tiếng Việt";
+        languageToggle.setAttribute("aria-pressed", String(showVietnamese));
+
+        const currentId = window.location.hash.slice(1);
+        if (!currentId) {
+            return;
+        }
+
+        const targetId = showVietnamese
+            ? (currentId.startsWith("vi-") ? currentId : `vi-${currentId}`)
+            : (currentId.startsWith("vi-") ? currentId.slice(3) : currentId);
+        const target = document.getElementById(targetId);
+
+        if (target) {
+            history.replaceState(null, "", `#${targetId}`);
+            target.scrollIntoView();
+        }
+    });
+</script>
 </body>
 </html>

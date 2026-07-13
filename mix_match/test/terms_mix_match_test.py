@@ -274,14 +274,14 @@ class MixMatchTermsTest(unittest.TestCase):
         )
 
     def test_language_switch_defaults_to_english(self):
-        self.assertIn("languageToggle", self.parser.ids)
+        self.assertIn("translateButton", self.parser.ids)
         self.assertIn("content-en", self.parser.ids)
         self.assertIn("content-vi", self.parser.ids)
         self.assertNotIn("hidden", self.parser.elements_by_id["content-en"])
         self.assertIn("hidden", self.parser.elements_by_id["content-vi"])
         self.assertEqual(
             "false",
-            self.parser.elements_by_id["languageToggle"].get("aria-pressed"),
+            self.parser.elements_by_id["translateButton"].get("aria-pressed"),
         )
         self.assertIn("Dịch sang tiếng Việt", self.parser.text)
 
