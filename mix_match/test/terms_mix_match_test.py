@@ -12,11 +12,13 @@ class TermsParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.ids = set()
+        self.elements_by_id = {}
         self.links = []
         self.toc_links = []
         self.headings = []
         self.text_parts = []
         self._nav_depth = 0
+        self._content_stack = []
         self._active_link = None
         self._active_heading = None
 
@@ -24,10 +26,17 @@ class TermsParser(HTMLParser):
         attributes = dict(attrs)
         if "id" in attributes:
             self.ids.add(attributes["id"])
+            self.elements_by_id[attributes["id"]] = attributes
+        if tag == "main" and attributes.get("id") in {"content-en", "content-vi"}:
+            self._content_stack.append(attributes["id"])
         if tag == "nav":
             self._nav_depth += 1
         if tag == "a":
-            self._active_link = {"href": attributes.get("href"), "text": []}
+            self._active_link = {
+                "href": attributes.get("href"),
+                "text": [],
+                "content": self._content_stack[-1] if self._content_stack else None,
+            }
             self.links.append(self._active_link)
             if self._nav_depth:
                 self.toc_links.append(self._active_link)
@@ -36,12 +45,15 @@ class TermsParser(HTMLParser):
                 "tag": tag,
                 "id": attributes.get("id"),
                 "text": [],
+                "content": self._content_stack[-1] if self._content_stack else None,
             }
             self.headings.append(self._active_heading)
 
     def handle_endtag(self, tag):
         if tag == "nav":
             self._nav_depth -= 1
+        if tag == "main" and self._content_stack:
+            self._content_stack.pop()
         if tag == "a":
             self._active_link = None
         if tag in {"h1", "h2", "h3"}:
@@ -107,7 +119,11 @@ class MixMatchTermsTest(unittest.TestCase):
             "30. MISCELLANEOUS",
             "31. CONTACT US",
         ]
-        actual = [self.parser.normalize(link["text"]) for link in self.parser.toc_links]
+        actual = [
+            self.parser.normalize(link["text"])
+            for link in self.parser.toc_links
+            if link["content"] in {None, "content-en"}
+        ]
         self.assertEqual(expected, actual)
         self.assertTrue(all(link["href"].startswith("#") for link in self.parser.toc_links))
 
@@ -148,7 +164,8 @@ class MixMatchTermsTest(unittest.TestCase):
         actual = [
             (heading["id"], self.parser.normalize(heading["text"]))
             for heading in self.parser.headings
-            if heading["id"] in {item[0] for item in expected}
+            if heading["content"] in {None, "content-en"}
+            and heading["id"] in {item[0] for item in expected}
         ]
         self.assertEqual(expected, actual)
 
@@ -213,7 +230,12 @@ class MixMatchTermsTest(unittest.TestCase):
                 self.assertIn(text, self.parser.text)
 
     def test_email_and_prohibited_activity_links_are_wired(self):
-        mail_links = [link for link in self.parser.links if link["href"] == "mailto:meocungptt@gmail.com"]
+        mail_links = [
+            link
+            for link in self.parser.links
+            if link["href"] == "mailto:meocungptt@gmail.com"
+            and link["content"] in {None, "content-en"}
+        ]
         self.assertEqual(4, len(mail_links))
         self.assertTrue(
             all(self.parser.normalize(link["text"]) == "meocungptt@gmail.com" for link in mail_links)
@@ -223,6 +245,7 @@ class MixMatchTermsTest(unittest.TestCase):
             link
             for link in self.parser.links
             if link["href"] == "#prohibited-activities"
+            and link["content"] in {None, "content-en"}
             and self.parser.normalize(link["text"]) == "PROHIBITED ACTIVITIES"
         ]
         self.assertEqual(3, len(prohibited_links))
@@ -231,8 +254,10 @@ class MixMatchTermsTest(unittest.TestCase):
     def test_privacy_policy_link_is_wired(self):
         url = "https://pham-tien-thang.github.io/policy/mix_match/policy_mix_match.html"
         privacy_links = [link for link in self.parser.links if link["href"] == url]
-        self.assertEqual(1, len(privacy_links))
-        self.assertEqual(url, self.parser.normalize(privacy_links[0]["text"]))
+        self.assertEqual(2, len(privacy_links))
+        self.assertTrue(
+            all(url == self.parser.normalize(link["text"]) for link in privacy_links)
+        )
 
     def test_missing_postal_address_placeholders_are_omitted(self):
         self.assertNotIn("__________", self.parser.text)
@@ -247,6 +272,94 @@ class MixMatchTermsTest(unittest.TestCase):
             "You can contact us by email at meocungptt@gmail.com.",
             self.parser.text,
         )
+
+    def test_language_switch_defaults_to_english(self):
+        self.assertIn("languageToggle", self.parser.ids)
+        self.assertIn("content-en", self.parser.ids)
+        self.assertIn("content-vi", self.parser.ids)
+        self.assertNotIn("hidden", self.parser.elements_by_id["content-en"])
+        self.assertIn("hidden", self.parser.elements_by_id["content-vi"])
+        self.assertEqual(
+            "false",
+            self.parser.elements_by_id["languageToggle"].get("aria-pressed"),
+        )
+        self.assertIn("Dịch sang tiếng Việt", self.parser.text)
+
+    def test_vietnamese_document_has_all_sections_and_local_targets(self):
+        expected_headings = [
+            "1. DỊCH VỤ CỦA CHÚNG TÔI",
+            "2. QUYỀN SỞ HỮU TRÍ TUỆ",
+            "3. CAM KẾT CỦA NGƯỜI DÙNG",
+            "4. ĐĂNG KÝ NGƯỜI DÙNG",
+            "5. SẢN PHẨM",
+            "6. MUA HÀNG VÀ THANH TOÁN",
+            "7. ĐĂNG KÝ GÓI DỊCH VỤ",
+            "8. CHÍNH SÁCH HOÀN TIỀN",
+            "9. PHẦN MỀM",
+            "10. HOẠT ĐỘNG BỊ CẤM",
+            "11. NỘI DUNG DO NGƯỜI DÙNG ĐÓNG GÓP",
+            "12. GIẤY PHÉP SỬ DỤNG NỘI DUNG ĐÓNG GÓP",
+            "13. GIẤY PHÉP ỨNG DỤNG DI ĐỘNG",
+            "14. MẠNG XÃ HỘI",
+            "15. TRANG WEB VÀ NỘI DUNG CỦA BÊN THỨ BA",
+            "16. NHÀ QUẢNG CÁO",
+            "17. QUẢN LÝ DỊCH VỤ",
+            "18. CHÍNH SÁCH QUYỀN RIÊNG TƯ",
+            "19. THỜI HẠN VÀ CHẤM DỨT",
+            "20. SỬA ĐỔI VÀ GIÁN ĐOẠN",
+            "21. LUẬT ĐIỀU CHỈNH",
+            "22. GIẢI QUYẾT TRANH CHẤP",
+            "23. ĐÍNH CHÍNH",
+            "24. TUYÊN BỐ MIỄN TRỪ TRÁCH NHIỆM",
+            "25. GIỚI HẠN TRÁCH NHIỆM",
+            "26. BỒI THƯỜNG",
+            "27. DỮ LIỆU NGƯỜI DÙNG",
+            "28. GIAO TIẾP, GIAO DỊCH VÀ CHỮ KÝ ĐIỆN TỬ",
+            "29. NGƯỜI DÙNG VÀ CƯ DÂN CALIFORNIA",
+            "30. ĐIỀU KHOẢN KHÁC",
+            "31. LIÊN HỆ VỚI CHÚNG TÔI",
+        ]
+        actual_headings = [
+            self.parser.normalize(heading["text"])
+            for heading in self.parser.headings
+            if heading["content"] == "content-vi"
+            and heading["tag"] == "h2"
+            and heading["id"] != "vi-agreement-to-our-legal-terms"
+            and heading["id"] != "vi-table-of-contents"
+        ]
+        self.assertEqual(expected_headings, actual_headings)
+
+        vi_toc_links = [
+            link for link in self.parser.toc_links if link["content"] == "content-vi"
+        ]
+        self.assertEqual(31, len(vi_toc_links))
+        self.assertTrue(all(link["href"].startswith("#vi-") for link in vi_toc_links))
+        self.assertTrue(all(link["href"][1:] in self.parser.ids for link in vi_toc_links))
+
+    def test_vietnamese_translation_and_toggle_script_are_complete(self):
+        required_vietnamese = [
+            "ĐIỀU KHOẢN VÀ ĐIỀU KIỆN CỦA MIX & MATCH",
+            "Mix & Match được vận hành bởi Phạm Tiến Thắng, một nhà phát triển cá nhân tại Hà Nội, Việt Nam",
+            "Thông tin được cung cấp khi sử dụng Dịch vụ không nhằm mục đích phân phối",
+            "Giấy phép sử dụng",
+            "CÁC DỊCH VỤ ĐƯỢC CUNG CẤP TRÊN CƠ SỞ “NGUYÊN TRẠNG” VÀ “SẴN CÓ”",
+            "Để giải quyết khiếu nại liên quan đến Dịch vụ",
+        ]
+        for text in required_vietnamese:
+            with self.subTest(text=text):
+                self.assertIn(text, self.parser.text)
+
+        required_script = [
+            "document.documentElement.lang",
+            "enContent.hidden",
+            "viContent.hidden",
+            "aria-pressed",
+            "Translate to English",
+            "Dịch sang tiếng Việt",
+        ]
+        for code in required_script:
+            with self.subTest(code=code):
+                self.assertIn(code, self.source)
 
 
 if __name__ == "__main__":
