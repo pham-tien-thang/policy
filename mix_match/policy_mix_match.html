@@ -62,8 +62,21 @@
     <p>If you are a California resident, you have the right to know what personal information is collected, the right to delete personal information, the right to opt out of the sale or sharing of personal information, and the right to non-discrimination for exercising these rights. To exercise your CCPA/CPRA rights, contact the Service Provider at meocungptt@gmail.com.</p>
 
     <div>
-        <br><strong>Artificial Intelligence</strong>
-        <p>The Application uses Artificial Intelligence (AI) technologies to enhance user experience and provide certain features. The AI components may process user data to deliver personalized content, recommendations, or automated functionalities. All AI processing is performed in accordance with this privacy policy and applicable laws. If you have questions about the AI features or data processing, please contact the Service Provider.</p><br>
+        <br><strong>AI Virtual Try-On and Sharing with FASHN AI</strong>
+        <p>The Application uses FASHN LTD ("FASHN AI"), a third-party AI service provider, to create virtual try-on results.</p>
+        <p>When you select or create a model image and a garment or outfit image, and then affirmatively continue with the create-image action, the Application processes and transmits the following data:</p>
+        <ul>
+            <li>The model image, which may include a face, physical appearance, body shape, clothing already worn, and background details</li>
+            <li>The garment or outfit image</li>
+            <li>Generation prompts or instructions, selected quality or generation mode, output resolution, and related processing parameters</li>
+            <li>Technical request information generated while providing the feature, such as request or prediction identifiers, processing status, timestamps, and error information</li>
+        </ul>
+        <p>Images stored locally on your device are transmitted as encoded image data. An image that is already available from an online source may be transmitted as an image URL. The request is first sent over an encrypted connection to the Service Provider's backend hosted using Google Firebase services and is then relayed to FASHN AI. Firebase authentication information is used by the Service Provider's backend to authenticate and protect the request. The request body relayed to FASHN AI does not include your email address or Firebase user ID.</p>
+        <p>FASHN AI processes the images, prompts, instructions, and processing parameters only to analyze the submitted media, generate the requested virtual try-on result, and return that result to the Application. A face or physical appearance visible in an image is processed for the requested image-generation feature, not to verify or establish a person's identity.</p>
+        <p>This data is sent to FASHN AI only after the Application displays a notice identifying the data and recipient and you affirmatively continue creating the image. You can decline by dismissing the selection sheet or otherwise not continuing with image creation. Permission is requested for each new generation request.</p>
+        <p>FASHN AI processes Customer Personal Data under its <a href="https://fashn.ai/legal/dpa" target="_blank" rel="noopener noreferrer">Data Processing Addendum</a>. Under those terms, FASHN AI processes Customer Personal Data only to provide, secure, maintain, and support the requested service and does not use Customer Content to train or fine-tune AI models, sell it, use it for cross-context behavioral advertising, or create advertising profiles.</p>
+        <p>Under FASHN AI's current <a href="https://docs.fashn.ai/api-overview/data-retention-privacy" target="_blank" rel="noopener noreferrer">API data retention documentation</a>, full base64 image data is used to process and deliver the request but is represented by a placeholder in stored request history and prediction metadata. Submitted image URLs, request parameters, status, error information, and output references may remain in request history for monitoring and debugging. Standard generated outputs delivered through FASHN AI's CDN are scheduled for deletion after three days. The Application downloads the generated result to app-controlled storage on your device so it can display and manage the result locally.</p>
+        <p>FASHN AI may use authorized sub-processors for relevant service paths, as described in its current <a href="https://fashn.ai/legal/subprocessors" target="_blank" rel="noopener noreferrer">Subprocessor List</a>. FASHN AI contractually requires its sub-processors to provide substantially the same data protection for the relevant processing. The Service Provider requires FASHN AI and other service providers that receive personal data from the Application to provide the same or equivalent protection described in this Privacy Policy and required by the applicable App Store privacy rules.</p><br>
     </div>
 
     <p>The Service Provider may use the information you provide to send important information, required notices, and, where permitted by law, marketing communications.</p><br>
@@ -71,7 +84,7 @@
     <p>For a better experience while using the Application, the Service Provider may require you to provide certain personally identifiable information, including but not limited to Email, userId, gender. The information the Service Provider requests will be retained and used as described in this privacy policy.</p><br>
 
     <strong>Third Party Access</strong>
-    <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.</p><br>
+    <p>The Application transmits personal data and User Provided Data to service providers only as needed for the purposes described in this Privacy Policy. This includes Google Firebase services used for authentication, backend request processing, security, analytics, and crash reporting, and FASHN AI used to process virtual try-on images. Aggregated or anonymized data may also be transmitted to help the Service Provider operate and improve the Application.</p><br>
 
     <strong>International Data Transfers</strong>
     <p>The Service Provider or its third-party service providers may transfer personal data to countries outside your country of residence, including outside the European Economic Area (EEA). Where applicable law requires safeguards for international transfers, the Service Provider will use appropriate mechanisms.</p>
@@ -88,8 +101,10 @@
         <ul>
             <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
             <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">AdMob</a></li>
+            <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Google Firebase services, including Authentication and Cloud Functions</a></li>
             <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
             <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li>
+            <li><a href="https://fashn.ai/legal/privacy-policy" target="_blank" rel="noopener noreferrer">FASHN AI Privacy Policy</a>, <a href="https://fashn.ai/legal/dpa" target="_blank" rel="noopener noreferrer">Data Processing Addendum</a>, and <a href="https://fashn.ai/legal/subprocessors" target="_blank" rel="noopener noreferrer">Subprocessor List</a></li>
         </ul>
     </div><br>
 
@@ -112,6 +127,7 @@
     <ul>
         <li>User Provided Data: Retained for the duration of your use of the Application plus 12 months thereafter, unless longer retention is required by law</li>
         <li>Automatically Collected Data: Retained for up to 24 months from collection, unless longer retention is required for legal compliance</li>
+        <li>AI Virtual Try-On Data: Input images are processed and delivered as described in the AI Virtual Try-On section. Standard generated outputs on FASHN AI's CDN are scheduled for deletion after three days. Technical request history and metadata may be retained by FASHN AI for monitoring, debugging, security, and legal compliance under its Data Processing Addendum. Copies downloaded to app-controlled storage on your device may remain until you delete them, the Application removes them through its storage or cache management, or you uninstall the Application</li>
         <li>Aggregated and Anonymized Data: Retained indefinitely as it no longer identifies you</li>
         <li>Data required for legal compliance: Retained as long as required by applicable law</li>
     </ul>
@@ -120,7 +136,7 @@
     <div>
         <br><strong>Data Deletion</strong>
         <p>You can request deletion of your personal data or account by contacting the Service Provider at meocungptt@gmail.com. The Service Provider will process your request within the timeframes required by applicable law.</p>
-        <p>Upon verification of your identity, the Service Provider will delete your personal data from its systems, except where retention is required for legal compliance or legitimate business purposes.</p>
+        <p>Upon verification of your identity, the Service Provider will delete your personal data from its systems, except where retention is required for legal compliance or legitimate business purposes. Where applicable, the Service Provider will also send an authenticated deletion instruction to FASHN AI under its Data Processing Addendum and require relevant service providers to delete the data they process on the Service Provider's behalf, subject to legal requirements and access-restricted backup cycles.</p>
     </div><br>
 
     <strong>Children</strong>
@@ -141,10 +157,10 @@
 
     <p>Previous versions of this Privacy Policy will be maintained and made available upon request by contacting the Service Provider at meocungptt@gmail.com.</p><br>
 
-    <p>This privacy policy is effective as of 2026-07-13</p><br>
+    <p>This privacy policy is effective as of 2026-08-26</p><br>
 
     <strong>Your Consent</strong>
-    <p>Where processing is based on consent, you provide that consent by affirmatively opting in to the relevant feature or action. You may withdraw consent at any time without affecting processing carried out before withdrawal. Processing based on other lawful bases is carried out as described above.</p><br>
+    <p>Where processing is based on consent, you provide that consent by affirmatively opting in to the relevant feature or action. For AI virtual try-on, the Application asks for permission immediately before each transmission to FASHN AI. You can decline or withdraw permission for future requests by dismissing the selection sheet or not continuing with image creation. Withdrawing consent does not affect processing already completed. To request deletion of data already transmitted, contact the Service Provider at meocungptt@gmail.com.</p><br>
 
     <strong>Contact Us</strong>
     <p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at meocungptt@gmail.com.</p>
@@ -184,8 +200,21 @@
     <p>Nếu bạn là cư dân California, bạn có quyền biết thông tin cá nhân nào được thu thập, quyền xóa thông tin cá nhân, quyền từ chối việc bán hoặc chia sẻ thông tin cá nhân và quyền không bị phân biệt đối xử khi thực hiện các quyền này. Để thực hiện các quyền theo CCPA/CPRA, hãy liên hệ Nhà Cung Cấp Dịch Vụ qua email meocungptt@gmail.com.</p>
 
     <div>
-        <br><strong>Trí tuệ nhân tạo</strong>
-        <p>Ứng dụng sử dụng các công nghệ Trí tuệ nhân tạo (AI) để nâng cao trải nghiệm người dùng và cung cấp một số tính năng. Các thành phần AI có thể xử lý dữ liệu người dùng để cung cấp nội dung được cá nhân hóa, đề xuất hoặc chức năng tự động. Mọi hoạt động xử lý bằng AI được thực hiện theo chính sách quyền riêng tư này và pháp luật hiện hành. Nếu có câu hỏi về các tính năng AI hoặc việc xử lý dữ liệu, vui lòng liên hệ Nhà Cung Cấp Dịch Vụ.</p><br>
+        <br><strong>Thử đồ bằng AI và chia sẻ dữ liệu với FASHN AI</strong>
+        <p>Ứng dụng sử dụng FASHN LTD ("FASHN AI"), một nhà cung cấp dịch vụ AI bên thứ ba, để tạo kết quả thử đồ ảo.</p>
+        <p>Khi bạn chọn hoặc tạo ảnh người mẫu và ảnh trang phục hoặc bộ đồ, sau đó chủ động tiếp tục hành động tạo ảnh, Ứng dụng xử lý và truyền các dữ liệu sau:</p>
+        <ul>
+            <li>Ảnh người mẫu, có thể bao gồm khuôn mặt, đặc điểm ngoại hình, vóc dáng, trang phục đang mặc và thông tin trong phông nền</li>
+            <li>Ảnh trang phục hoặc bộ đồ</li>
+            <li>Prompt hoặc hướng dẫn tạo ảnh, chất lượng hoặc chế độ tạo ảnh đã chọn, độ phân giải đầu ra và các thông số xử lý liên quan</li>
+            <li>Thông tin kỹ thuật được tạo ra khi cung cấp tính năng, chẳng hạn như mã định danh yêu cầu hoặc dự đoán, trạng thái xử lý, dấu thời gian và thông tin lỗi</li>
+        </ul>
+        <p>Ảnh được lưu cục bộ trên thiết bị của bạn được chuyển đổi sang định dạng dữ liệu ảnh base64 để truyền đi. Ảnh đã có sẵn từ một nguồn trực tuyến có thể được truyền dưới dạng URL ảnh. Yêu cầu trước tiên được gửi qua kết nối được mã hóa tới hệ thống backend của Nhà Cung Cấp Dịch Vụ được lưu trữ bằng các dịch vụ Google Firebase, sau đó được chuyển tiếp tới FASHN AI. Thông tin xác thực Firebase được backend của Nhà Cung Cấp Dịch Vụ sử dụng để xác thực và bảo vệ yêu cầu. Nội dung yêu cầu được chuyển tiếp tới FASHN AI không bao gồm địa chỉ email hoặc Firebase user ID của bạn.</p>
+        <p>FASHN AI chỉ xử lý ảnh, prompt, hướng dẫn và thông số xử lý để phân tích nội dung đã gửi, tạo kết quả thử đồ ảo được yêu cầu và trả kết quả đó về Ứng dụng. Khuôn mặt hoặc đặc điểm ngoại hình xuất hiện trong ảnh được xử lý để cung cấp tính năng tạo ảnh theo yêu cầu, không phải để xác minh hoặc thiết lập danh tính của một người.</p>
+        <p>Dữ liệu này chỉ được gửi tới FASHN AI sau khi Ứng dụng hiển thị thông báo xác định dữ liệu, bên nhận và bạn chủ động tiếp tục tạo ảnh. Bạn có thể từ chối bằng cách đóng bảng lựa chọn hoặc không tiếp tục tạo ảnh. Sự cho phép được yêu cầu cho từng yêu cầu tạo ảnh mới.</p>
+        <p>FASHN AI xử lý Dữ liệu Cá nhân của Khách hàng theo <a href="https://fashn.ai/legal/dpa" target="_blank" rel="noopener noreferrer">Phụ lục Xử lý Dữ liệu</a>. Theo các điều khoản này, FASHN AI chỉ xử lý Dữ liệu Cá nhân của Khách hàng để cung cấp, bảo mật, duy trì và hỗ trợ dịch vụ được yêu cầu; không sử dụng Nội dung của Khách hàng để huấn luyện hoặc tinh chỉnh mô hình AI; không bán dữ liệu, sử dụng dữ liệu cho quảng cáo hành vi trên nhiều ngữ cảnh hoặc tạo hồ sơ quảng cáo.</p>
+        <p>Theo <a href="https://docs.fashn.ai/api-overview/data-retention-privacy" target="_blank" rel="noopener noreferrer">tài liệu lưu giữ dữ liệu API</a> hiện hành của FASHN AI, dữ liệu ảnh base64 đầy đủ được sử dụng để xử lý và cung cấp kết quả nhưng được thay bằng một placeholder trong lịch sử yêu cầu và metadata dự đoán được lưu trữ. URL ảnh đã gửi, thông số yêu cầu, trạng thái, thông tin lỗi và tham chiếu tới kết quả có thể được giữ trong lịch sử yêu cầu để giám sát và gỡ lỗi. Kết quả tiêu chuẩn được cung cấp qua CDN của FASHN AI được lên lịch xóa sau ba ngày. Ứng dụng tải kết quả đã tạo xuống vùng lưu trữ do Ứng dụng quản lý trên thiết bị để hiển thị và quản lý kết quả cục bộ.</p>
+        <p>FASHN AI có thể sử dụng các bên xử lý phụ được ủy quyền cho những luồng dịch vụ có liên quan, như mô tả trong <a href="https://fashn.ai/legal/subprocessors" target="_blank" rel="noopener noreferrer">Danh sách Bên xử lý phụ</a> hiện hành. FASHN AI có nghĩa vụ hợp đồng yêu cầu các bên xử lý phụ cung cấp mức bảo vệ dữ liệu về cơ bản tương đương cho hoạt động xử lý liên quan. Nhà Cung Cấp Dịch Vụ yêu cầu FASHN AI và các nhà cung cấp dịch vụ khác nhận dữ liệu cá nhân từ Ứng dụng cung cấp mức bảo vệ giống hoặc tương đương với Chính sách Quyền riêng tư này và các quy định quyền riêng tư hiện hành của App Store.</p><br>
     </div>
 
     <p>Nhà Cung Cấp Dịch Vụ có thể sử dụng thông tin bạn cung cấp để gửi thông tin quan trọng, thông báo bắt buộc và, khi pháp luật cho phép, các nội dung tiếp thị.</p><br>
@@ -193,7 +222,7 @@
     <p>Để có trải nghiệm tốt hơn khi sử dụng Ứng dụng, Nhà Cung Cấp Dịch Vụ có thể yêu cầu bạn cung cấp một số thông tin định danh cá nhân, bao gồm nhưng không giới hạn ở Email, userId và giới tính. Thông tin mà Nhà Cung Cấp Dịch Vụ yêu cầu sẽ được lưu giữ và sử dụng như mô tả trong chính sách quyền riêng tư này.</p><br>
 
     <strong>Quyền truy cập của bên thứ ba</strong>
-    <p>Chỉ dữ liệu đã được tổng hợp và ẩn danh mới được truyền định kỳ tới các dịch vụ bên ngoài nhằm hỗ trợ Nhà Cung Cấp Dịch Vụ cải thiện Ứng dụng và dịch vụ. Nhà Cung Cấp Dịch Vụ có thể chia sẻ thông tin của bạn với bên thứ ba theo các cách được mô tả trong tuyên bố quyền riêng tư này.</p><br>
+    <p>Ứng dụng truyền dữ liệu cá nhân và Dữ liệu do Người dùng cung cấp cho các nhà cung cấp dịch vụ chỉ khi cần thiết cho các mục đích được mô tả trong Chính sách Quyền riêng tư này. Các nhà cung cấp này bao gồm dịch vụ Google Firebase được sử dụng cho xác thực, xử lý yêu cầu backend, bảo mật, phân tích và báo cáo lỗi; cùng FASHN AI được sử dụng để xử lý ảnh thử đồ ảo. Dữ liệu đã tổng hợp hoặc ẩn danh cũng có thể được truyền để giúp Nhà Cung Cấp Dịch Vụ vận hành và cải thiện Ứng dụng.</p><br>
 
     <strong>Chuyển dữ liệu quốc tế</strong>
     <p>Nhà Cung Cấp Dịch Vụ hoặc các nhà cung cấp dịch vụ bên thứ ba có thể chuyển dữ liệu cá nhân tới các quốc gia ngoài quốc gia cư trú của bạn, bao gồm ngoài Khu vực Kinh tế Châu Âu (EEA). Khi pháp luật hiện hành yêu cầu các biện pháp bảo vệ đối với việc chuyển dữ liệu quốc tế, Nhà Cung Cấp Dịch Vụ sẽ sử dụng các cơ chế phù hợp.</p>
@@ -210,8 +239,10 @@
         <ul>
             <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
             <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">AdMob</a></li>
+            <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Các dịch vụ Google Firebase, bao gồm Authentication và Cloud Functions</a></li>
             <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
             <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li>
+            <li><a href="https://fashn.ai/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Chính sách Quyền riêng tư của FASHN AI</a>, <a href="https://fashn.ai/legal/dpa" target="_blank" rel="noopener noreferrer">Phụ lục Xử lý Dữ liệu</a> và <a href="https://fashn.ai/legal/subprocessors" target="_blank" rel="noopener noreferrer">Danh sách Bên xử lý phụ</a></li>
         </ul>
     </div><br>
 
@@ -234,6 +265,7 @@
     <ul>
         <li>Dữ liệu do Người dùng cung cấp: Được lưu giữ trong thời gian bạn sử dụng Ứng dụng và thêm 12 tháng sau đó, trừ khi pháp luật yêu cầu thời gian lưu giữ lâu hơn</li>
         <li>Dữ liệu được thu thập tự động: Được lưu giữ tối đa 24 tháng kể từ khi thu thập, trừ khi cần lưu giữ lâu hơn để tuân thủ pháp luật</li>
+        <li>Dữ liệu Thử đồ bằng AI: Ảnh đầu vào được xử lý và cung cấp như mô tả trong phần Thử đồ bằng AI. Kết quả tiêu chuẩn trên CDN của FASHN AI được lên lịch xóa sau ba ngày. Lịch sử yêu cầu và metadata kỹ thuật có thể được FASHN AI lưu giữ để giám sát, gỡ lỗi, bảo mật và tuân thủ pháp luật theo Phụ lục Xử lý Dữ liệu. Bản sao được tải xuống vùng lưu trữ do Ứng dụng quản lý trên thiết bị có thể được giữ cho đến khi bạn xóa, Ứng dụng xóa thông qua cơ chế quản lý lưu trữ hoặc bộ nhớ đệm, hoặc bạn gỡ cài đặt Ứng dụng</li>
         <li>Dữ liệu đã tổng hợp và ẩn danh: Được lưu giữ vô thời hạn vì không còn nhận dạng được bạn</li>
         <li>Dữ liệu cần thiết để tuân thủ pháp luật: Được lưu giữ trong thời gian pháp luật hiện hành yêu cầu</li>
     </ul>
@@ -242,7 +274,7 @@
     <div>
         <br><strong>Xóa dữ liệu</strong>
         <p>Bạn có thể yêu cầu xóa dữ liệu cá nhân hoặc tài khoản bằng cách liên hệ Nhà Cung Cấp Dịch Vụ qua email meocungptt@gmail.com. Nhà Cung Cấp Dịch Vụ sẽ xử lý yêu cầu của bạn trong thời hạn mà pháp luật hiện hành quy định.</p>
-        <p>Sau khi xác minh danh tính, Nhà Cung Cấp Dịch Vụ sẽ xóa dữ liệu cá nhân của bạn khỏi hệ thống, ngoại trừ trường hợp cần lưu giữ để tuân thủ pháp luật hoặc phục vụ mục đích kinh doanh hợp pháp.</p>
+        <p>Sau khi xác minh danh tính, Nhà Cung Cấp Dịch Vụ sẽ xóa dữ liệu cá nhân của bạn khỏi hệ thống, ngoại trừ trường hợp cần lưu giữ để tuân thủ pháp luật hoặc phục vụ mục đích kinh doanh hợp pháp. Khi áp dụng, Nhà Cung Cấp Dịch Vụ cũng sẽ gửi chỉ dẫn xóa đã xác thực tới FASHN AI theo Phụ lục Xử lý Dữ liệu và yêu cầu các nhà cung cấp dịch vụ liên quan xóa dữ liệu mà họ xử lý thay mặt Nhà Cung Cấp Dịch Vụ, tùy thuộc vào yêu cầu pháp lý và chu kỳ sao lưu bị giới hạn quyền truy cập.</p>
     </div><br>
 
     <strong>Trẻ em</strong>
@@ -263,10 +295,10 @@
 
     <p>Các phiên bản trước của Chính sách Quyền riêng tư này sẽ được lưu giữ và cung cấp khi có yêu cầu gửi tới Nhà Cung Cấp Dịch Vụ qua email meocungptt@gmail.com.</p><br>
 
-    <p>Chính sách quyền riêng tư này có hiệu lực từ ngày 2026-07-13.</p><br>
+    <p>Chính sách quyền riêng tư này có hiệu lực từ ngày 2026-08-26.</p><br>
 
     <strong>Sự đồng ý của bạn</strong>
-    <p>Khi việc xử lý dựa trên sự đồng ý, bạn thể hiện sự đồng ý bằng cách chủ động chấp thuận tính năng hoặc hành động liên quan. Bạn có thể rút lại sự đồng ý bất kỳ lúc nào mà không ảnh hưởng đến hoạt động xử lý đã được thực hiện trước khi rút lại. Việc xử lý dựa trên các căn cứ pháp lý khác được thực hiện như mô tả ở trên.</p><br>
+    <p>Khi việc xử lý dựa trên sự đồng ý, bạn thể hiện sự đồng ý bằng cách chủ động chấp thuận tính năng hoặc hành động liên quan. Đối với tính năng thử đồ bằng AI, Ứng dụng xin phép ngay trước mỗi lần truyền dữ liệu tới FASHN AI. Bạn có thể từ chối hoặc rút lại sự cho phép đối với các yêu cầu trong tương lai bằng cách đóng bảng lựa chọn hoặc không tiếp tục tạo ảnh. Việc rút lại sự đồng ý không ảnh hưởng đến hoạt động xử lý đã hoàn thành. Để yêu cầu xóa dữ liệu đã được truyền, hãy liên hệ Nhà Cung Cấp Dịch Vụ qua email meocungptt@gmail.com.</p><br>
 
     <strong>Liên hệ</strong>
     <p>Nếu bạn có bất kỳ câu hỏi nào về quyền riêng tư khi sử dụng Ứng dụng hoặc về cách thức hoạt động, vui lòng liên hệ Nhà Cung Cấp Dịch Vụ qua email meocungptt@gmail.com.</p>
